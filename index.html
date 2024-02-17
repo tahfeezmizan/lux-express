@@ -1,39 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperature Conveter</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="box">
-        <h1 class="title">Temperature Converter</h1>
-        <div class="box-content">
-            <div class="container">
-                <label>Celsius</label>
-                <input type="number" id="celsius" placeholder="Culsius">
+    <title>Lux Express Services Bus</title>
 
-                <button onclick="change()">Change</button>
-            </div>
-            <div class="container">
-                <label>Fahrenhit</label>
-                <input type="number" id="fahrenhit" placeholder="Fahrenhit">
-            </div>
-        </div>
-    </div>
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
+    <!-- font awesome icon cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+    <!-- tailwind CSS and daisy UI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- tailwind custom style palette -->
     <script>
-        const change = () => {
-            let celsius = document.getElementById('celsius').value;
-
-            let convert = (celsius * 5/9) + 32;
-
-            let fahrenhit = document.getElementById("fahrenhit").value = convert;
-        };
-
-        
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primaryColor: '#1DD100',
+                        secondaryColor: '#030712',
+                    },
+                    fontFamily: {
+                        raleway: ['Raleway, sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
     </script>
+</head>
+
+<body>
+    <!-- header content section  -->
+    <header>
+        <div class="navbar w-full md:w-8/12 mx-auto py-12 px-4 lg:px-0">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="" class="text-lg font-medium text-secondaryColor opacity-70">Home</a></li>
+                        <li><a href="" class="text-lg font-medium text-secondaryColor opacity-70">About</a></li>
+                        <li><a href="" class="text-lg font-medium text-secondaryColor opacity-70">Destination</a></li>
+                        <li><a href="" class="text-lg font-medium text-secondaryColor opacity-70">Search</a></li>
+                    </ul>
+                </div>
+                <a class="text-4xl font-extrabold font-raleway text-secondaryColor cursor-pointer ml-4 lg:ml-0">Lux
+                    Bus</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a href=""
+                            class="text-lg font-medium text-secondaryColor opacity-70 hover:bg-transparent">Home</a>
+                    </li>
+                    <li><a href=""
+                            class="text-lg font-medium text-secondaryColor opacity-70 hover:bg-transparent">About</a>
+                    </li>
+                    <li><a href=""
+                            class="text-lg font-medium text-secondaryColor opacity-70 hover:bg-transparent">Destination</a>
+                    </li>
+                    <li><a href=""
+                            class="text-lg font-medium text-secondaryColor opacity-70 hover:bg-transparent">Search</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a
+                    class="btn rounded-8  lg:ml-8 xl:ml-0 md:ml-0 border-primaryColor bg-[#1dd1001c] text-primaryColor text-xl font-semibold">Bus
+                    <img src="images/bus-logo.svg" alt=""></a>
+            </div>
+    </header>
+
+
 </body>
+
 </html>
