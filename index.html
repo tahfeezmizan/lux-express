@@ -20,6 +20,11 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        *{
+            scroll-behavior: smooth;
+        }
+    </style>
     <!-- tailwind custom style palette -->
     <script>
         tailwind.config = {
@@ -102,7 +107,7 @@
                             directly within the app. The integrated testing features allow for a streamlined .</p>
                         <button
                             class="btn rounded-8 px-8 border-none bg-primaryColor text-secondaryColor text-xl font-raleway font-bold"><a
-                                href="#">Buy Tickets</a></button>
+                                href="#ticket-interface">Buy Tickets</a></button>
                     </div>
                 </div>
 
@@ -147,27 +152,34 @@
                 </div>
 
                 <!-- Coupon Code card  -->
-                <div class="card-container flex gap-10 items-center justify-center py-11">
-                    <div class="coupon-card bg-yellow-400 p-10 rounded-3xl flex items-center justify-center gap-10">
+                <div class="card-container flex gap-8 items-center justify-center py-11">
+                    <div class="coupon-card bg-yellow-400 rounded-3xl flex items-center justify-center gap-10">
                         <!-- card 1  -->
-                        <div class="content pr-10 border-r-2 border-dotted border-white ">
+                        <div class="content p-9">
                             <h2 class="text-4xl text-secondaryColor opacity-80 font-black">15% OFF</h2>
                             <p class="text-xl font-semibold text-secondaryColor opacity-80">on your next purchase</p>
                             <p class="card-des text-lg text-secondaryColor opacity-50">use by January 2024</p>
                         </div>
-                        <div class="content">
+                        <div class="">
+                            <img src="images/cupon-devider.png" alt="">
+                        </div>
+                        <div class="content p-9">
                             <h2 class="text-3xl font-raleway font-bold">NEW15</h2>
                             <p class="text-xl font-medium text-secondaryColor opacity-40">Coupon Code</p>
                         </div>
                     </div>
                     <!-- card 2  -->
-                    <div class="coupon-card bg-[#F78C9C] p-10 rounded-3xl flex items-center justify-center gap-10">
-                        <div class="content pr-10 border-r-2 border-dotted border-white">
+                    <div class="coupon-card bg-[#F78C9C] rounded-3xl flex items-center justify-center gap-10">
+                        <!-- card 1  -->
+                        <div class="content p-9">
                             <h2 class="text-4xl text-secondaryColor opacity-80 font-black">20% OFF</h2>
                             <p class="text-xl font-semibold text-secondaryColor opacity-80">on your next purchase</p>
                             <p class="card-des text-lg text-secondaryColor opacity-50">use by January 2024</p>
                         </div>
-                        <div class="content">
+                        <div class="">
+                            <img src="images/cupon-devider.png" alt="">
+                        </div>
+                        <div class="content p-9">
                             <h2 class="text-3xl font-raleway font-bold">Couple 20</h2>
                             <p class="text-xl font-medium text-secondaryColor opacity-40">Coupon Code</p>
                         </div>
@@ -183,9 +195,9 @@
 
 
 
-        <!-- ticket buy section design  -->
+        <!-- ticket interface section design  -->
         <section class="py-12 rounded-3xl bg-[#F7F8F8] border-t-2 border-primaryColor">
-            <div class="w-full px-4 md:px-0 md:w-8/12 mx-auto">
+            <div class="w-full px-4 md:px-0 md:w-8/12 mx-auto" id="ticket-interface">
                 <div class="">
                     <div class="text-center my-14">
                         <h1 class="text-5xl font-bold font-raleway mb-6">Lux Express Ltd.</h1>
@@ -195,7 +207,7 @@
                 </div>
 
                 <!-- ticket  -->
-                <div class="coupon-card bg-white p-10 rounded-3xl flex justify-between gap-10">
+                <div class="coupon-card bg-white p-10 rounded-3xl flex justify-between gap-10 mb-7">
                     <div class="content pr-10 border-r-2 border-dotted border-white">
 
                         <div class="ticket-top mb-6 flex gap-96 justify-between">
@@ -248,8 +260,190 @@
                     </div>
                 </div>
 
-                
 
+                <!-- bus seat and ticket calculate section  -->
+                <div class="bg-white rounded-3xl py-10 flex justify-between gap-1">
+                    <div class="w-7/12 p-10 border-r-2 border-dotted border-gray-400">
+                        <h2 class="text-2xl font-semibold font-raleway mb-6">Select Your Seat</h2>
+
+                        <div class="flex justify-between border-b-2 border-t-2 border-dotted border-gray-400 py-4 ">
+                            <div class="dynamic-set w-32 rounded-xl flex gap-3">
+                                <img src="images/seat-gray.png" alt="">
+                                <span
+                                    class="text-lg text-secondaryColor opacity-60 font-inter font-medium">Available</span>
+                            </div>
+
+                            <div class="dynamic-set w-32 rounded-xl flex gap-3">
+                                <img src="images/seat-green.png" alt="">
+                                <span class="text-lg text-primaryColor font-inter font-medium">Selected</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="col-span-5"></div>
+                                <div class="flex items-center justify-center bg-gray-100 text-center p-3 rounded-lg">
+                                    <img class="" src="images/wheel.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="">A</div>
+                                <div id="A1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">A1</div>
+                                <div id="A2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">A2</div>
+                                <div class=""></div>
+                                <div id="A3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">A3</div>
+                                <div id="A4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">A4</div>
+                            </div>
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="">B</div>
+                                <div id="B1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">B1</div>
+                                <div id="B2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">B2</div>
+                                <div class=""></div>
+                                <div id="B3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">B3</div>
+                                <div id="B4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">B4</div>
+                            </div>
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="">C</div>
+                                <div id="C1" class="font-inter bg-gray-100 text-center p-3 rounded-lg"> C1</div>
+                                <div id="C2" class="font-inter bg-gray-100 text-center p-3 rounded-lg"> C2</div>
+                                <div class=""></div>
+                                <div id="C3" class="font-inter bg-gray-100 text-center p-3 rounded-lg"> C3</div>
+                                <div id="C4" class="font-inter bg-gray-100 text-center p-3 rounded-lg"> C4</div>
+                            </div>
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="">D</div>
+                                <div id="D1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">D1</div>
+                                <div id="D2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">D2</div>
+                                <div class=""></div>
+                                <div id="D3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">D3</div>
+                                <div id="D4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">D4</div>
+                            </div>
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="">E</div>
+                                <div id="E1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">E1</div>
+                                <div id="E2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">E2</div>
+                                <div class=""></div>
+                                <div id="E3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">E3</div>
+                                <div id="E4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">E4</div>
+                            </div>
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="">F</div>
+                                <div id="F1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">F1</div>
+                                <div id="F2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">F2</div>
+                                <div class=""></div>
+                                <div id="F3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">F3</div>
+                                <div id="F4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">F4</div>
+                            </div>
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="">G</div>
+                                <div id="G1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">G1</div>
+                                <div id="G2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">G2</div>
+                                <div class=""></div>
+                                <div id="G3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">G3</div>
+                                <div id="G4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">G4</div>
+                            </div>
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="">H</div>
+                                <div id="H1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">H1</div>
+                                <div id="H2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">H2</div>
+                                <div class=""></div>
+                                <div id="H3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">H3</div>
+                                <div id="H4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">H4</div>
+                            </div>
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="">I</div>
+                                <div id="I1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">I1</div>
+                                <div id="I2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">I2</div>
+                                <div class=""></div>
+                                <div id="I3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">I3</div>
+                                <div id="I4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">I4</div>
+                            </div>
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="">J</div>
+                                <div id="J1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">J1</div>
+                                <div id="J2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">J2</div>
+                                <div class=""></div>
+                                <div id="J3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">J3</div>
+                                <div id="J4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">J4</div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="w-5/12 p-10">
+                        <div class="flex justify-between border-b-2 border-dotted border-gray-400 mb-6">
+                            <h2 class="text-2xl font-semibold font-raleway mb-6">Select Your Seat</h2>
+                        </div>
+
+                        <div class="bg-gray-100 p-8 rounded-2xl mb-6">
+                            <div class="flex justify-between border-b-2 border-dotted border-gray-400 py-5">
+                                <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Seat<span
+                                        id="seat-increase" class="bg-primaryColor text-white rounded-full px-2">2</span>
+                                </h4>
+                                <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Class</h4>
+                                <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Price</h4>
+                            </div>
+
+                            <!-- total price  -->
+                            <div class="">
+                                <div class="flex justify-between my-4">
+                                    <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Total Price</h4>
+                                    <h4 id="total-price" class="text-lg font-semibold font-raleway text-secondaryColor">
+                                        BDT
+                                        000</h4>
+                                </div>
+                                <!-- discount coupon -->
+                                <div class="flex justify-between my-4 py-1 px-2 bg-white rounded-lg">
+                                    <input id="coupn-input" type="text" class="rounded-xl"
+                                        placeholder="Have any copupon?" name="">
+                                    <button
+                                        class="btn-md  rounded-xl border-none bg-primaryColor text-white text-base font-raleway font-semibold"><a
+                                            href="#">Apply</a></button>
+                                </div>
+                                <div class="flex justify-between my-4">
+                                    <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Grand Total</h4>
+                                    <h4 id="grand-total" class="text-lg font-semibold font-raleway text-secondaryColor">
+                                        BDT
+                                        000</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- contact info  -->
+                        <div class="">
+                            <div class="mb-6">
+                                <div class="label">
+                                    <span class="text-inter text-base font-semibold text-secondaryColor">Passenger
+                                        Name*</span>
+                                </div>
+                                <input type="text" placeholder="Enter your name" class="input input-bordered w-full" />
+                            </div>
+
+                            <div class="mb-6">
+                                <div class="label">
+                                    <span class="text-inter text-base font-semibold text-secondaryColor">Phone
+                                        Number*</span>
+                                </div>
+                                <input type="number" placeholder="Enter your phone number"
+                                    class="input input-bordered w-full" />
+                            </div>
+
+                            <div class="mb-6">
+                                <div class="label">
+                                    <span class="text-inter text-base font-semibold text-secondaryColor">Email ID</span>
+                                </div>
+                                <input type="email" placeholder="Enter your email id"
+                                    class="input input-bordered w-full" />
+                            </div>
+
+                            <button
+                                class="btn-md w-full rounded-xl border-none bg-primaryColor text-white text-base font-raleway font-semibold"><a
+                                    href="#">Next</a></button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>
