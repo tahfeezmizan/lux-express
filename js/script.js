@@ -11,7 +11,6 @@ function totalSelectedSeat() {
     currentSeatElement.innerText = totalSeatCount;
 }
 
-
 // Seats left function 
 function seatsLeft() {
     const totalSeatElement = document.getElementById('seat-left');
@@ -21,7 +20,6 @@ function seatsLeft() {
     const totalSeat = totalCurrentSeat - 1;
     totalSeatElement.innerText = totalSeat
 }
-
 
 //add seat title 
 function seatTitle() {
@@ -57,8 +55,7 @@ function discountCoupon() {
         grandPriceElement.innerText = totalDiscount;
 
         const couponContainer = document.getElementById('discount-coupon-container');
-        // couponContainer.classList.add('hidden')
-        console.log(couponContainer.currentTarget)
+        couponContainer.classList.add('hidden')
     }
     else if (couponInputValue === 'Couple 20') {
         const discountPrice = totalSeatPrice * 0.2;
