@@ -1,12 +1,28 @@
 // seat item count
 let seatCount = 0;
 
+//seat count indicator 
+function totalSelectedSea() {
+    const currentSeatElement = document.getElementById('seat-increase');
+    const currentSeatText = currentSeatElement.innerText;
+    const currentSeat = parseInt(currentSeatText);
 
+    const totalSeatCount = currentSeat + 1;
+    currentSeatElement.innerText = totalSeatCount;
+}
 
-// //seat title 
-// function seatItem(){
-//     const 
-// }
+//add seat title 
+function seatTitle(){
+    const seatTextName = document.get
+}
+
+// seat price count
+let perSeatPrice = 550;
+function seatPriceCount() {
+    const totalSeatPrice = perSeatPrice * seatCount;
+    const priceElement = document.getElementById('total-price').innerText = totalSeatPrice;
+}
+
 
 // get seat item
 const items = document.querySelectorAll('.item');
