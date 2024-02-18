@@ -40,12 +40,40 @@ function seatPriceCount() {
 }
 
 // discount coupon 
-function discountCoupon(){
+function discountCoupon() {
     const couponInput = document.getElementById('coupon-input');
     const couponInputValue = couponInput.value;
     const couponButton = document.getElementById('coupon-btn');
-    
-    
+
+
+    // grand price
+    const totalSeatPrice = perSeatPrice * seatCount;
+
+    if (couponInputValue === 'NEW15') {
+        const discountPrice = totalSeatPrice * 0.15;
+
+        const totalDiscount = totalSeatPrice - discountPrice
+        const grandPriceElement = document.getElementById('grand-total');
+        grandPriceElement.innerText = totalDiscount;
+
+        const couponContainer = document.getElementById('discount-coupon-container');
+        // couponContainer.classList.add('hidden')
+        console.log(couponContainer.currentTarget)
+    }
+    else if (couponInputValue === 'Couple 20') {
+        const discountPrice = totalSeatPrice * 0.2;
+
+        const totalDiscount = totalSeatPrice - discountPrice
+        const grandPriceElement = document.getElementById('grand-total');
+        grandPriceElement.innerText = totalDiscount;
+
+        const couponContainer = document.getElementById('discount-coupon-container');
+        couponContainer.classList.add('hidden')
+    }
+    else {
+        alert('please provide a valid coupon')
+    }
+
 }
 
 // get seat item
@@ -56,7 +84,7 @@ for (const item of items) {
         const itemElement = key.currentTarget;
         const itemSerialText = key.currentTarget.innerText;
 
-        
+
         if (seatCount < 4) {
             // Create container div
             const divElement = document.createElement('div');
