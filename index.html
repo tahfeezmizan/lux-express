@@ -171,9 +171,11 @@
                             <p class="text-xl font-semibold text-secondaryColor opacity-80">on your next purchase</p>
                             <p class="card-des text-lg text-secondaryColor opacity-50">use by January 2024</p>
                         </div>
+
                         <div class="hidden md:block">
                             <img src="images/cupon-devider.png" alt="">
                         </div>
+
                         <div class="content p-9">
                             <h2 class="text-3xl font-raleway font-bold">NEW15</h2>
                             <p class="text-xl font-medium text-secondaryColor opacity-40">Coupon Code</p>
@@ -219,11 +221,11 @@
 
                 <!-- ticket  -->
                 <div
-                    class="coupon-card bg-white p-6 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-between gap-10 mb-7">
-                    <div class="content lg:pr-10 border-r-2 border-dotted border-white">
+                    class="coupon-card bg-white p-6 lg:py-0 lg:px-10 rounded-3xl flex flex-col lg:flex-row justify-between gap-10 mb-7">
+                    <div class="content py-10 flex flex-col">
 
-                        <div class="ticket-top mb-6 flex flex-col lg:flex-row gap-5 lg:gap-96 justify-between">
-                            <div class="ticket-title flex justify-between gap-2 lg:gap-4">
+                        <div class="ticket-top mb-6 flex flex-col md:flex-row gap-5  lg:gap-80 justify-between">
+                            <div class="ticket-title flex justify-between gap-2 md:gap-2">
                                 <img src="images/bus-logo.png" class="w-12 md:w-auto" alt="">
                                 <div class="">
                                     <h3 class="text-3xl font-bold font-raleway">Lux Express</h3>
@@ -264,16 +266,23 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                    <div class="content flex flex-col items-center justify-center">
-                        <img src="images/fare.png" class="mb-6" alt="">
-                        <h3 class="text-3xl font-bold font-raleway">550 Taka</h3>
-                        <p class="text-2xl font-semibold text-secondaryColor opacity-60">Per Seat</p>
+
+                    <div class="hidden lg:block ">
+                        <img src="images/info-devider.png" class="h-full" alt="">
+                    </div>
+
+                    <!-- ticket price  -->
+                    <div class="content flex justify-center items-center">
+                        <div class="content flex flex-col items-center justify-center">
+                            <img src="images/fare.png" class="mb-6" alt="">
+                            <h3 class="text-3xl font-bold font-raleway">550 Taka</h3>
+                            <p class="text-2xl font-semibold text-secondaryColor opacity-60">Per Seat</p>
+                        </div>
                     </div>
                 </div>
 
-
+                
                 <!-- bus seat and ticket calculate section  -->
                 <div class="bg-white rounded-3xl py-10 flex flex-col lg:flex-row justify-between gap-1">
                     <div class="w-full lg:w-7/12 p-6 lg:p-10 lg:border-r-2 border-dotted border-gray-400">
@@ -418,9 +427,9 @@
                                 </div>
                                 <!-- discount coupon -->
                                 <div class="flex justify-between my-4 py-1 px-2 bg-white rounded-lg">
-                                    <input id="coupn-input" type="text" class="rounded-xl outline-none border-none w-f"
-                                        placeholder="Have any copupon?" name="">
-                                    <button
+                                    <input id="coupon-input" type="text" class="rounded-xl outline-none border-none w-f"
+                                        placeholder="Have any coupon?" name="">
+                                    <button onclick="discountCoupon()" id="coupon-btn"
                                         class="btn-md rounded-xl border-none bg-primaryColor text-white text-base font-raleway font-semibold">Apply</button>
                                 </div>
                                 <div class="flex justify-between my-4">

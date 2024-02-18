@@ -39,7 +39,14 @@ function seatPriceCount() {
     const grandPriceElement = document.getElementById('grand-total').innerText = totalSeatPrice;
 }
 
-
+// discount coupon 
+function discountCoupon(){
+    const couponInput = document.getElementById('coupon-input');
+    const couponInputValue = couponInput.value;
+    const couponButton = document.getElementById('coupon-btn');
+    
+    
+}
 
 // get seat item
 const items = document.querySelectorAll('.item');
