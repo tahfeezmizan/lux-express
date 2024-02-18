@@ -12,17 +12,15 @@ function totalSelectedSeat() {
 }
 
 
-let totalSeatBus = 40
 // Seats left function 
 function seatsLeft(){
     const totalSeatElement = document.getElementById('seat-left');
     const totalSeatText = totalSeatElement.innerText;
     const totalCurrentSeat = parseInt(totalSeatText)
 
-    const totalSeat = totalSeatBus - 1;
-    console.log(totalCurrentSeat);
-    console.log(totalSeat);
+    const totalSeat = totalCurrentSeat - 1;
     
+    totalSeatElement.innerText = totalSeat    
 }
 
 
