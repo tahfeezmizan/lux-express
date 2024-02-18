@@ -58,7 +58,7 @@
 
 <body>
     <!-- header content section  -->
-    <header>
+    <header >
         <div class="navbar w-full md:w-8/12 mx-auto py-12 px-4 lg:px-0">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -467,7 +467,7 @@
                                     class="input input-bordered w-full" />
                             </div>
 
-                            <button id="next-btn" onclick="nextButton()"
+                            <button id="next-btn" onclick="nextPopupButton()"
                                 class="btn-md w-full rounded-xl border-none bg-primaryColor text-white text-base font-raleway font-semibold mb-6"><a
                                     href="#">Next</a></button>
                         </div>
@@ -484,9 +484,22 @@
             </div>
         </section>
 
-
+        <!-- popup section  -->
+        <section id="popup-section" class="bg-[#F7F8F8] h-screen flex justify-center items-center">
+            <div class="flex justify-center items-center font-roboto">
+                <div class="container w-[720px] bg-white rounded-3xl p-16 flex flex-col justify-center items-center gap-1">
+                    <img src="images/success.png" class="mb-8" alt="">
+                    <h1 class="text-[#27AE60] font-roboto font-bold text-2xl mb-6">SUCCESS</h1>
+                    <h4 class="text-[#4A4A4A] text-xl font-medium text-center mb-2">Thank you for Booking Our Bus Seats. <br>We are working hard to find the best service and deals for you.</h4>
+                    <p class="font-light text-xl mb-5">Shortly you will find a confirmation in your email.</p>
+    
+                    <button class="btn btn-wide rounded-full px-12 border-none bg-[#27AE60] text-white text-xl font-semibold">Continue</button>
+                </div>
+            </div>
+        </section>
 
     </main>
+
     <footer class="py-20 bg-secondaryColor">
         <div class="w-full px-4 md:px-0 md:w-3/4 lg:w-8/12 mx-auto">
             <div class=" flex flex-col lg:flex-row justify-between  gap-5 mb-12">

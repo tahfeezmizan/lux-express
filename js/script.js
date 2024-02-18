@@ -117,6 +117,17 @@ for (const item of items) {
     })
 }
 
+function hideElementById() {
+    const element = document.getElementById('main-content');
+    // element.classList.add('hidden');
+    console.log(element)
+}
+
+function nextPopupButton(){
+    hideElementById()
+    
+}
+
 // for (const item of items) {
 //     item.addEventListener('click', function (key) {
 //         const itemElement = key.currentTarget;
