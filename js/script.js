@@ -1,22 +1,29 @@
-// Get all the seat elements
-// const seatElements = document.querySelectorAll('.bus-sit div[id^=]');
-
-// seatElements.forEach(seat => {
-//     seat.addEventListener('click', function() {
-//         this.classList.toggle('selected');
-//     });
-// });
-
-function item() {
-    const setaNumber = document.querySelector('.item');
-    const setBg = setaNumber.classList.add('bg-green-400');
-    const setColor = setBg.classList.add('text-white');
-    const setaIncrease = document.getElementById('seat-increase');
+// seat item count
+let seatCount = 0;
 
 
-    console.log(setColor)
 
-    // const getSeat = document.querySelector('.item').a;
-    // getSeat.innerText.value;
-    // console.log(getSeat)
+// //seat title 
+// function seatItem(){
+//     const 
+// }
+
+// get seat item
+const items = document.querySelectorAll('.item');
+
+for (const item of items) {
+    item.addEventListener('click', function (key) {
+
+        const itemElement = key.currentTarget;
+        if (seatCount < 4) {
+            itemElement.classList.add('bg-green-400', "text-white");
+            seatCount++;
+            totalSelectedSea()
+            seatPriceCount();
+        }
+        else {
+            alert("You can only select a maximum of 4 seats.");
+        };
+    })
 }
+

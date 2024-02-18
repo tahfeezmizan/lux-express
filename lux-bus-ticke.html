@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lux Express Services Bus</title>
+
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome icon cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- tailwind CSS and daisy UI CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+        var selectedSeats = [];
+        function selectSeat(seatId) {
+            var seatElement = document.getElementById(seatId);
+            if (selectedSeats.includes(seatId)) {
+                selectedSeats = selectedSeats.filter(item => item !== seatId);
+                seatElement.classList.remove("bg-green-500", "text-white");
+                seatElement.classList.add("bg-gray-100");
+            } else {
+                if (selectedSeats.length < 4) {
+                    selectedSeats.push(seatId);
+                    seatElement.classList.remove("bg-gray-100");
+                    seatElement.classList.add("bg-green-500", "text-white");
+                } else {
+                    alert("You can only select a maximum of 4 seats.");
+                }
+            }
+        }
+    </script>
+
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <!-- tailwind custom style palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primaryColor: '#1DD100',
+                        secondaryColor: '#030712',
+                    },
+                    fontFamily: {
+                        raleway: ['Raleway, sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- header content section  -->
+    <header>
+        <div class="navbar w-full md:w-8/12 mx-auto py-12 px-4 lg:px-0">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="" class="text-lg font-medium text-secondaryColor opacity-70">Home</a></li>
+                        <li><a href="" class="text-lg font-medium text-secondaryColor opacity-70">About</a></li>
+                        <li><a href="" class="text-lg font-medium text-secondaryColor opacity-70">Destination</a></li>
+                        <li><a href="" class="text-lg font-medium text-secondaryColor opacity-70">Search</a></li>
+                    </ul>
+                </div>
+                <a class="text-4xl font-extrabold font-raleway text-secondaryColor cursor-pointer ml-4 lg:ml-0">Lux
+                    Bus</a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
+                    <li><a href=""
+                            class="text-lg font-medium text-secondaryColor opacity-70 hover:bg-transparent">Home</a>
+                    </li>
+                    <li><a href=""
+                            class="text-lg font-medium text-secondaryColor opacity-70 hover:bg-transparent">About</a>
+                    </li>
+                    <li><a href=""
+                            class="text-lg font-medium text-secondaryColor opacity-70 hover:bg-transparent">Destination</a>
+                    </li>
+                    <li><a href=""
+                            class="text-lg font-medium text-secondaryColor opacity-70 hover:bg-transparent">Search</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a
+                    class="btn rounded-8 border-primaryColor px-8 bg-[#1dd1001c] text-primaryColor text-xl font-semibold">Bus
+                    <img src="images/bus-logo.svg" alt=""></a>
+            </div>
+    </header>
+
+
+    <!-- main section container  -->
+    <main>
+        <!-- Slider Section  -->
+        <section class="">
+            <div class="w-full md:w-8/12 mx-auto pb-12 px-4 lg:px-0">
+                <div class="slider rounded-3xl h-[400px] lg:h-[550px]  flex flex-col items-center justify-center"
+                    style="background: url(images/banner.png) no-repeat center; background-size: cover;">
+                    <!-- banner text container -->
+                    <div class="text-center text-white ">
+                        <h1 class="text-3xl lg:text-6xl font-extrabold font-raleway mb-7 px-14 lg:px-64">End-to-End
+                            Travel with <span class="text-primaryColor">Lux Express</span></h1>
+                        <p class="text-lg font-inter mb-10 px-5 lg:px-64">Yes, you can run unit tests and view the
+                            results
+                            directly within the app. The integrated testing features allow for a streamlined .</p>
+                        <button
+                            class="btn rounded-8 px-8 border-none bg-primaryColor text-secondaryColor text-xl font-raleway font-bold"><a
+                                href="#ticket-interface">Buy Tickets</a></button>
+                    </div>
+                </div>
+
+                <!-- services progress section  -->
+                <div class="main-content flex flex-col lg:flex-row gap-6 justify-center items-center -mt-7 lg:-mt-16">
+                    <div
+                        class="card bg-white w-[300px] flex flex-row gap-7 py-7 px-8 rounded-3xl border-b-2 border-primaryColor">
+                        <img src="images/people.svg" class="w-12" alt="">
+                        <div class="">
+                            <h1 class="card-title text-4xl font-inter font-bold text-secondaryColor">500K+</h1>
+                            <p class="card-des text-lg text-secondaryColor opacity-60">Registered users</p>
+                        </div>
+                    </div>
+                    <div
+                        class="card bg-white w-[300px] flex flex-row gap-7 py-7 px-8 rounded-3xl border-b-2 border-primaryColor">
+                        <img src="images/ticket-cupon.svg" class="w-12" alt="">
+                        <div class="">
+                            <h1 class="card-title text-4xl font-inter font-bold text-secondaryColor">1.7 lacks</h1>
+                            <p class="card-des text-lg text-secondaryColor opacity-60">Tickets sold</p>
+                        </div>
+                    </div>
+                    <div
+                        class="card bg-white w-[300px] flex flex-row gap-7 py-7 px-8 rounded-3xl border-b-2 border-primaryColor">
+                        <img src="images/stoppage.svg" class="w-12" alt="">
+                        <div class="">
+                            <h1 class="card-title text-4xl font-inter font-bold text-secondaryColor">80K+</h1>
+                            <p class="card-des text-lg text-secondaryColor opacity-60">Rental partners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Coupon Code section  -->
+        <section class="py-16">
+            <div class="w-full px-4 md:px-0 md:w-8/12 mx-auto">
+                <div class="">
+                    <div class="text-center mb-4">
+                        <h1 class="text-3xl lg:text-5xl font-bold raleway">Best offers for you</h1>
+                    </div>
+                </div>
+
+                <!-- Coupon Code card  -->
+                <div class="card-container flex flex-col lg:flex-row gap-8 items-center justify-center py-11">
+                    <div
+                        class="coupon-card bg-yellow-400 rounded-3xl flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-10">
+                        <!-- card 1  -->
+                        <div class="content p-9">
+                            <h2 class="text-4xl text-secondaryColor opacity-80 font-black">15% OFF</h2>
+                            <p class="text-xl font-semibold text-secondaryColor opacity-80">on your next purchase</p>
+                            <p class="card-des text-lg text-secondaryColor opacity-50">use by January 2024</p>
+                        </div>
+                        <div class="hidden md:block">
+                            <img src="images/cupon-devider.png" alt="">
+                        </div>
+                        <div class="content p-9">
+                            <h2 class="text-3xl font-raleway font-bold">NEW15</h2>
+                            <p class="text-xl font-medium text-secondaryColor opacity-40">Coupon Code</p>
+                        </div>
+                    </div>
+                    <!-- card 2  -->
+                    <div
+                        class="coupon-card bg-[#F78C9C] rounded-3xl flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-10">
+                        <!-- card 1  -->
+                        <div class="content p-9">
+                            <h2 class="text-4xl text-secondaryColor opacity-80 font-black">20% OFF</h2>
+                            <p class="text-xl font-semibold text-secondaryColor opacity-80">on your next purchase</p>
+                            <p class="card-des text-lg text-secondaryColor opacity-50">use by January 2024</p>
+                        </div>
+                        <div class="hidden md:block">
+                            <img src="images/cupon-devider.png" alt="">
+                        </div>
+                        <div class="content p-9">
+                            <h2 class="text-3xl font-raleway font-bold">Couple 20</h2>
+                            <p class="text-xl font-medium text-secondaryColor opacity-40">Coupon Code</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a class="btn rounded-8 my-4 border-primaryColor px-8 text-primaryColor text-xl font-semibold ">See
+                        All Offers</a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ticket interface section design  -->
+        <section class="py-12 rounded-3xl bg-[#F7F8F8] border-t-2 border-primaryColor">
+            <div class="w-full px-4 md:px-0 md:w-8/12 mx-auto" id="ticket-interface">
+                <div class="">
+                    <div class="text-center my-14">
+                        <h1 class="text-5xl font-bold font-raleway mb-6">Lux Express Ltd.</h1>
+                        <p class="text-lg font-inter mb-10 lg:px-64">Yes, you can run unit tests and view the results
+                            directly within the app. The integrated testing features allow for a streamlined .</p>
+                    </div>
+                </div>
+
+                <!-- ticket  -->
+                <div
+                    class="coupon-card bg-white p-10 rounded-3xl flex flex-col lg:flex-row justify-between gap-10 mb-7">
+                    <div class="content lg:pr-10 border-r-2 border-dotted border-white">
+
+                        <div class="ticket-top mb-6 flex flex-col lg:flex-row gap-5 lg:gap-96 justify-between">
+                            <div class="ticket-title flex gap-4">
+                                <img src="images/bus-logo.png" alt="">
+                                <div class="">
+                                    <h3 class="text-3xl font-bold font-raleway">Lux Express</h3>
+                                    <p class="text-lg font-inter">Coach-009-WEB ! AC_Business</p>
+                                </div>
+                            </div>
+                            <div class="dynamic-set w-52 rounded-xl py-4 px-5 flex gap-3 bg-[#1dd1001c]">
+                                <img src="images/seat-green.png" alt="">
+                                <span class="text-lg text-primaryColor font-inter font-medium">40 Seats left</span>
+                            </div>
+                        </div>
+
+                        <!-- ticket address  -->
+                        <div class="bg-gray-100 p-8 rounded-2xl">
+                            <div class="flex justify-between border-b-2 border-dotted border-gray-400 py-5">
+                                <h4 class="text-lg font-semibold font-raleway text-secondaryColor opacity-60">Route</h4>
+                                <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Dhaka - Sylhet</h4>
+                            </div>
+                            <div class="flex justify-between border-b-2 border-dotted border-gray-400 py-5 mb-7">
+                                <h4 class="text-lg font-semibold font-raleway text-secondaryColor opacity-60">Departure
+                                    Time</h4>
+                                <h4 class="text-lg font-semibold font-raleway text-secondaryColor">9:00 PM</h4>
+                            </div>
+
+                            <div class="flex flex-col lg:flex-row gap-4 lg:gap-0 justify-around text-center">
+                                <div class="dynamic-set w-full lg:w-64 rounded-xl py-4 px-5 bg-gray-200">
+                                    <h4 class="text-base text-secondaryColor opacity-80 font-inter font-medium">Boarding
+                                        Point - Laxmipur</h4>
+                                </div>
+                                <div class="dynamic-set w-full lg:w-64 rounded-xl py-4 px-5 bg-gray-200">
+                                    <h4 class="text-base text-secondaryColor opacity-80 font-inter font-medium">Dropping
+                                        Point - Bogura</h4>
+                                </div>
+                                <div class="dynamic-set w-full lg:w-64 rounded-xl py-4 px-5 bg-gray-200">
+                                    <h4 class="text-base text-secondaryColor opacity-80 font-inter font-medium">Est.
+                                        Time - 11 Hour</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="content flex flex-col items-center justify-center">
+                        <img src="images/fare.png" class="mb-6" alt="">
+                        <h3 class="text-3xl font-bold font-raleway">550 Taka</h3>
+                        <p class="text-2xl font-semibold text-secondaryColor opacity-60">Per Seat</p>
+                    </div>
+                </div>
+
+
+                <!-- bus seat and ticket calculate section  -->
+                <div class="bg-white rounded-3xl py-10 flex flex-col lg:flex-row justify-between gap-1">
+                    <div class="w-full lg:w-7/12 p-6 lg:p-10 lg:border-r-2 border-dotted border-gray-400">
+                        <h2 class="text-2xl font-semibold font-raleway mb-6">Select Your Seat</h2>
+
+                        <div class="flex justify-between border-b-2 border-t-2 border-dotted border-gray-400 py-4 ">
+                            <div class="dynamic-set w-32 rounded-xl flex gap-3">
+                                <img src="images/seat-gray.png" alt="">
+                                <span
+                                    class="text-lg text-secondaryColor opacity-60 font-inter font-medium">Available</span>
+                            </div>
+
+                            <div class="dynamic-set w-32 rounded-xl flex gap-3">
+                                <img src="images/seat-green.png" alt="">
+                                <span class="text-lg text-primaryColor font-inter font-medium">Selected</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                <div class="col-span-5"></div>
+                                <div class="flex items-center justify-center bg-gray-100 text-center p-3 rounded-lg">
+                                    <img class="" src="images/wheel.svg" alt="">
+                                </div>
+                            </div>
+
+                            <!-- seat serial  -->
+                            <div class="">
+                                <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                    <div class="">A</div>
+                                    <div id="A1" onclick="selectSeat('A1')"
+                                        class="item font-inter bg-gray-100 text-center p-3 rounded-lg">A1</div>
+                                    <div id="A2" onclick="selectSeat('A2')"
+                                        class="item font-inter bg-gray-100 text-center p-3 rounded-lg">A2</div>
+                                    <div class=""></div>
+                                    <div id="A3" onclick="selectSeat('A3')"
+                                        class=" item font-inter bg-gray-100 text-center p-3 rounded-lg">A3</div>
+                                    <div id="A4" onclick="selectSeat('A4')"
+                                        class=" item font-inter bg-gray-100 text-center p-3 rounded-lg">A4</div>
+                                </div>
+                                <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                    <div class="">B</div>
+                                    <div id="B1" onclick="selectSeat('B1')"
+                                        class="font-inter bg-gray-100 text-center p-3 rounded-lg">B1</div>
+                                    <div id="B2" onclick="selectSeat('B2')"
+                                        class="font-inter bg-gray-100 text-center p-3 rounded-lg">B2</div>
+                                    <div class=""></div>
+                                    <div id="B3" onclick="selectSeat('B3')"
+                                        class="font-inter bg-gray-100 text-center p-3 rounded-lg">B3</div>
+                                    <div id="B4" onclick="selectSeat('')"
+                                        class="font-inter bg-gray-100 text-center p-3 rounded-lg">B4</div>
+                                </div>
+                                <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                    <div class="">C</div>
+                                    <div id="C1" onclick="selectSeat('')"
+                                        class="font-inter bg-gray-100 text-center p-3 rounded-lg"> C1</div>
+                                    <div id="C2" onclick="selectSeat('')"
+                                        class="font-inter bg-gray-100 text-center p-3 rounded-lg"> C2</div>
+                                    <div class=""></div>
+                                    <div id="C3" onclick="selectSeat('')"
+                                        class="font-inter bg-gray-100 text-center p-3 rounded-lg"> C3</div>
+                                    <div id="C4" class="font-inter bg-gray-100 text-center p-3 rounded-lg"> C4</div>
+                                </div>
+                                <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                    <div class="">D</div>
+                                    <div id="D1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">D1</div>
+                                    <div id="D2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">D2</div>
+                                    <div class=""></div>
+                                    <div id="D3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">D3</div>
+                                    <div id="D4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">D4</div>
+                                </div>
+                                <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                    <div class="">E</div>
+                                    <div id="E1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">E1</div>
+                                    <div id="E2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">E2</div>
+                                    <div class=""></div>
+                                    <div id="E3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">E3</div>
+                                    <div id="E4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">E4</div>
+                                </div>
+                                <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                    <div class="">F</div>
+                                    <div id="F1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">F1</div>
+                                    <div id="F2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">F2</div>
+                                    <div class=""></div>
+                                    <div id="F3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">F3</div>
+                                    <div id="F4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">F4</div>
+                                </div>
+                                <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                    <div class="">G</div>
+                                    <div id="G1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">G1</div>
+                                    <div id="G2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">G2</div>
+                                    <div class=""></div>
+                                    <div id="G3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">G3</div>
+                                    <div id="G4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">G4</div>
+                                </div>
+                                <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                    <div class="">H</div>
+                                    <div id="H1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">H1</div>
+                                    <div id="H2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">H2</div>
+                                    <div class=""></div>
+                                    <div id="H3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">H3</div>
+                                    <div id="H4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">H4</div>
+                                </div>
+                                <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                    <div class="">I</div>
+                                    <div id="I1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">I1</div>
+                                    <div id="I2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">I2</div>
+                                    <div class=""></div>
+                                    <div id="I3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">I3</div>
+                                    <div id="I4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">I4</div>
+                                </div>
+                                <div class="bus-sit grid grid-cols-6 justify-center items-center gap-4 mb-4">
+                                    <div class="">J</div>
+                                    <div id="J1" class="font-inter bg-gray-100 text-center p-3 rounded-lg">J1</div>
+                                    <div id="J2" class="font-inter bg-gray-100 text-center p-3 rounded-lg">J2</div>
+                                    <div class=""></div>
+                                    <div id="J3" class="font-inter bg-gray-100 text-center p-3 rounded-lg">J3</div>
+                                    <div id="J4" class="font-inter bg-gray-100 text-center p-3 rounded-lg">J4</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="w-full lg:w-5/12 p-6 lg:p-10">
+                        <div class="flex justify-between border-b-2 border-dotted border-gray-400 mb-6">
+                            <h2 class="text-2xl font-semibold font-raleway mb-6">Select Your Seat</h2>
+                        </div>
+
+                        <div class="bg-gray-100 p-8 rounded-2xl mb-6">
+                            <div class="flex justify-between border-b-2 border-dotted border-gray-400 py-5">
+                                <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Seat<span
+                                        id="seat-increase" class="bg-primaryColor text-white rounded-full px-2">2</span>
+                                </h4>
+                                <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Class</h4>
+                                <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Price</h4>
+                            </div>
+
+                            <!-- total price  -->
+                            <div class="">
+                                <div class="flex justify-between my-4">
+                                    <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Total Price</h4>
+                                    <h4 id="total-price" class="text-lg font-semibold font-raleway text-secondaryColor">
+                                        BDT
+                                        000</h4>
+                                </div>
+                                <!-- discount coupon -->
+                                <div class="flex justify-between my-4 py-1 px-2 bg-white rounded-lg">
+                                    <input id="coupn-input" type="text" class="rounded-xl outline-none border-none w-f"
+                                        placeholder="Have any copupon?" name="">
+                                    <button
+                                        class="btn-md  rounded-xl border-none bg-primaryColor text-white text-base font-raleway font-semibold"><a
+                                            href="#">Apply</a></button>
+                                </div>
+                                <div class="flex justify-between my-4">
+                                    <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Grand Total</h4>
+                                    <h4 id="grand-total" class="text-lg font-semibold font-raleway text-secondaryColor">
+                                        BDT
+                                        000</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- contact info  -->
+                        <div class="">
+                            <div class="mb-6">
+                                <div class="label">
+                                    <span class="text-inter text-base font-semibold text-secondaryColor">Passenger
+                                        Name*</span>
+                                </div>
+                                <input type="text" placeholder="Enter your name" class="input input-bordered w-full" />
+                            </div>
+
+                            <div class="mb-6">
+                                <div class="label">
+                                    <span class="text-inter text-base font-semibold text-secondaryColor">Phone
+                                        Number*</span>
+                                </div>
+                                <input type="number" placeholder="Enter your phone number"
+                                    class="input input-bordered w-full" />
+                            </div>
+
+                            <div class="mb-6">
+                                <div class="label">
+                                    <span class="text-inter text-base font-semibold text-secondaryColor">Email ID</span>
+                                </div>
+                                <input type="email" placeholder="Enter your email id"
+                                    class="input input-bordered w-full" />
+                            </div>
+
+                            <button
+                                class="btn-md w-full rounded-xl border-none bg-primaryColor text-white text-base font-raleway font-semibold"><a
+                                    href="#">Next</a></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
