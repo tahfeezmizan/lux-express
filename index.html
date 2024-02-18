@@ -25,6 +25,16 @@
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
+        .ticket-list-container{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 100px;
+            font-family: inter;
+            font-size: 18px;
+            font-weight: 500;
+            color: #525252 !important;
+        }
     </style>
 
     <!-- tailwind custom style palette -->
@@ -98,16 +108,13 @@
     <main>
         <!-- Slider Section  -->
         <section class="">
-            <div class="w-full md:w-8/12 mx-auto pb-12 px-4 lg:px-0">
+            <div class="w-full md:w-3/4 lg:w-8/12 mx-auto pb-12 px-4 lg:px-0">
                 <div class="slider rounded-3xl h-[400px] lg:h-[550px]  flex flex-col items-center justify-center"
                     style="background: url(images/banner.png) no-repeat center; background-size: cover;">
                     <!-- banner text container -->
                     <div class="text-center text-white ">
-                        <h1 class="text-3xl lg:text-6xl font-extrabold font-raleway mb-7 px-14 lg:px-64">End-to-End
-                            Travel with <span class="text-primaryColor">Lux Express</span></h1>
-                        <p class="text-lg font-inter mb-10 px-5 lg:px-64">Yes, you can run unit tests and view the
-                            results
-                            directly within the app. The integrated testing features allow for a streamlined .</p>
+                        <h1 class="text-4xl lg:text-6xl font-extrabold font-raleway mb-7 px-1 lg:px-60">Superior travel experience with <span class="text-primaryColor">Lux Express</span></h1>
+                        <p class="text-lg font-inter mb-10 px-1 lg:px-80">Book your Gateway to your next adventure for safe seats, comfortable rides, convenient, affordable, and unforgettable travel!</p>
                         <button
                             class="btn rounded-8 px-8 border-none bg-primaryColor text-secondaryColor text-xl font-raleway font-bold"><a
                                 href="#ticket-interface">Buy Tickets</a></button>
@@ -147,7 +154,7 @@
 
         <!-- Coupon Code section  -->
         <section class="py-16">
-            <div class="w-full px-4 md:px-0 md:w-8/12 mx-auto">
+            <div class="w-full px-4 md:px-0 lg:w-8/12 mx-auto">
                 <div class="">
                     <div class="text-center mb-4">
                         <h1 class="text-3xl lg:text-5xl font-bold raleway">Best offers for you</h1>
@@ -157,7 +164,7 @@
                 <!-- Coupon Code card  -->
                 <div class="card-container flex flex-col lg:flex-row gap-8 items-center justify-center py-11">
                     <div
-                        class="coupon-card bg-yellow-400 rounded-3xl flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-10">
+                        class="coupon-card bg-yellow-400 rounded-3xl flex flex-col md:flex-row items-center justify-center gap-0 lg:gap-10">
                         <!-- card 1  -->
                         <div class="content p-9">
                             <h2 class="text-4xl text-secondaryColor opacity-80 font-black">15% OFF</h2>
@@ -174,7 +181,7 @@
                     </div>
                     <!-- card 2  -->
                     <div
-                        class="coupon-card bg-[#F78C9C] rounded-3xl flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-10">
+                        class="coupon-card bg-[#F78C9C] rounded-3xl flex flex-col md:flex-row items-center justify-center gap-0 lg:gap-10">
                         <!-- card 1  -->
                         <div class="content p-9">
                             <h2 class="text-4xl text-secondaryColor opacity-80 font-black">20% OFF</h2>
@@ -202,23 +209,22 @@
 
         <!-- ticket interface section design  -->
         <section class="py-12 rounded-3xl bg-[#F7F8F8] border-t-2 border-primaryColor">
-            <div class="w-full px-4 md:px-0 md:w-8/12 mx-auto" id="ticket-interface">
+            <div class="w-full px-4 md:px-0 md:w-3/4 lg:w-8/12 mx-auto" id="ticket-interface">
                 <div class="">
                     <div class="text-center my-14">
                         <h1 class="text-5xl font-bold font-raleway mb-6">Lux Express Ltd.</h1>
-                        <p class="text-lg font-inter mb-10 lg:px-64">Yes, you can run unit tests and view the results
-                            directly within the app. The integrated testing features allow for a streamlined .</p>
+                        <p class="text-lg font-inter mb-10 lg:px-64">We are constantly working to improve our service standards to offer the most comfortable and reliable way of traveling.</p>
                     </div>
                 </div>
 
                 <!-- ticket  -->
                 <div
-                    class="coupon-card bg-white p-10 rounded-3xl flex flex-col lg:flex-row justify-between gap-10 mb-7">
+                    class="coupon-card bg-white p-6 lg:p-10 rounded-3xl flex flex-col lg:flex-row justify-between gap-10 mb-7">
                     <div class="content lg:pr-10 border-r-2 border-dotted border-white">
 
                         <div class="ticket-top mb-6 flex flex-col lg:flex-row gap-5 lg:gap-96 justify-between">
-                            <div class="ticket-title flex gap-4">
-                                <img src="images/bus-logo.png" alt="">
+                            <div class="ticket-title flex justify-between gap-2 lg:gap-4">
+                                <img src="images/bus-logo.png" class="w-12 md:w-auto" alt="">
                                 <div class="">
                                     <h3 class="text-3xl font-bold font-raleway">Lux Express</h3>
                                     <p class="text-lg font-inter">Coach-009-WEB ! AC_Business</p>
@@ -399,7 +405,7 @@
                             </div>
 
 
-                            <div class="">
+                            <div id="booking-ticket-item" class="flex flex-col justify-around items-center py-2">
 
                             </div>
 
@@ -408,20 +414,19 @@
                                 <div class="flex justify-between my-4">
                                     <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Total Price</h4>
                                     <h4 class="text-lg font-semibold font-raleway text-secondaryColor">
-                                        BDT <span id="total-price">000</span></h4>
+                                        BDT <span id="total-price" class="text-inter">000</span></h4>
                                 </div>
                                 <!-- discount coupon -->
                                 <div class="flex justify-between my-4 py-1 px-2 bg-white rounded-lg">
                                     <input id="coupn-input" type="text" class="rounded-xl outline-none border-none w-f"
                                         placeholder="Have any copupon?" name="">
                                     <button
-                                        class="btn-md  rounded-xl border-none bg-primaryColor text-white text-base font-raleway font-semibold"
-                                        disabled><a href="#">Apply</a></button>
+                                        class="btn-md rounded-xl border-none bg-primaryColor text-white text-base font-raleway font-semibold">Apply</button>
                                 </div>
                                 <div class="flex justify-between my-4">
                                     <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Grand Total</h4>
                                     <h4 class="text-lg font-semibold font-raleway text-secondaryColor">
-                                        BDT <span id="grand-total">000</span></h4>
+                                        BDT <span id="grand-total" class="text-inter">000</span></h4>
                                 </div>
                             </div>
                         </div>
@@ -459,8 +464,10 @@
                         </div>
 
                         <div class="dynamic-set rounded-xl flex gap-3 justify-around">
-                            <p class="text- text-secondaryColor opacity-60 font-inter font-medium underline">Terms and Conditions</p>
-                            <p class="text- text-secondaryColor opacity-60 font-inter font-medium underline">Cancellation Policy</p>
+                            <p class="text-secondaryColor opacity-60 font-inter font-medium underline">Terms and
+                                Conditions</p>
+                            <p class="text-secondaryColor opacity-60 font-inter font-medium underline">
+                                Cancellation Policy</p>
                         </div>
                     </div>
                 </div>
@@ -471,25 +478,35 @@
 
 
     </main>
-    <footer>
+    <footer class="py-20 bg-secondaryColor">
+        <div class="w-full px-4 md:px-0 md:w-3/4 lg:w-8/12 mx-auto">
+            <div class=" flex flex-col lg:flex-row justify-between  gap-5 mb-12">
+                <div class="text-white ">
+                    <h1 class="card-title text-4xl font-raleway font-bold mb-5">Lux Express+</h1>
+                    <p class="card-des w-full lg:w-96 text-lg font-inter text-white opacity-80">In Lux Express there are people who love what they do and do what they love</p>
+                </div>
 
-        <section class="py-20 bg-secondaryColor">
-            <div class="w-full px-4 md:px-0 md:w-8/12 mx-auto">
-                <div class=" flex flex-col lg:flex-row justify-between mb-12">
-                    <div class="text-white">
-                        <h1 class="card-title text-4xl font-raleway font-bold mb-5">Lux Express+</h1>
-                        <p class="card-des text-lg font-inter text-white opacity-80">P-Ticket is a digital platform to
-                            make your
-                            daily commuting better.</p>
-                    </div>
-
-                    <div class="play-store">
-                        <h3 class="font-raleway text-xl font-semibold text-white mb-5">Download our app</h3>
-                        <img src="images/play-store.svg" alt="">
-                    </div>
+                <div class="play-store">
+                    <h3 class="font-raleway text-xl font-semibold text-white mb-5">Download our app</h3>
+                    <img src="images/play-store.svg" alt="">
                 </div>
             </div>
-        </section>
+
+            <div class="flex flex-col lg:flex-row justify-between border-t-2 border-dotted border-gray-400 pt-8 gap-6">
+                <div class="">
+                    <p class="text-white opacity-60 font-inter">@all rights reserved, Lux Express services
+                        limited.2024</p>
+                </div>
+                <div class="dynamic-set rounded-xl flex gap-8 justify-around">
+                    <p class="text-white opacity-60 font-inter font-medium">Terms and
+                        Conditions</p>
+                    <p class="text-white opacity-60 font-inter font-medium">Return & refund policy</p>
+                    <p class="text-white opacity-60 font-inter font-medium">Privacy policy</p>
+                </div>
+            </div>
+
+
+        </div>
 
     </footer>
 
