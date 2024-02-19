@@ -89,7 +89,7 @@ function discountCoupon() {
 
         const DiscountTotalElement = document.getElementById('discount-total');
         DiscountTotalElement.innerText = discountPrice;
-        
+
         const totalDiscount = totalSeatPrice - discountPrice;
         const grandPriceElement = document.getElementById('grand-total');
         grandPriceElement.innerText = totalDiscount;
@@ -109,7 +109,7 @@ function discountCoupon() {
         const grandPriceElement = document.getElementById('grand-total');
         grandPriceElement.innerText = totalDiscount;
 
-        
+
         const couponContainer = document.getElementById('discount-coupon-container');
         couponContainer.classList.add('hidden');
 
@@ -160,76 +160,57 @@ for (const item of items) {
         else {
             alert("You can only select a maximum of 4 seats.");
         };
-
-
     })
 }
 
-function hideElementById() {
-    const element = document.getElementById('main-content');
-    // element.classList.add('hidden');
-    console.log(element)
+
+// next button popup function 
+function hideAllElement() {
+    const allElementHide = document.querySelector('.ticket-interface');
+    allElementHide.classList.add('hidden');
 }
 
+function setPopUpSection() {
+    const displayItem = document.getElementById('popup-section');
+    displayItem.classList.remove('hidden')
+}
+
+function nextPopupButton() {
+    hideAllElement()
+    setPopUpSection()
+}
 
 // next button program 
 const phoneInput = document.getElementById('phone-input');
 const nextButton = document.getElementById('next-btn');
-
 
 phoneInput.addEventListener('input', function () {
 
     if (phoneInput.value.trim() !== '') {
         nextButton.removeAttribute('disabled');
         nextButton.classList.add('bg-primaryColor');
-        my_modal_2.showModal()
     } else {
         nextButton.setAttribute('disabled', 'disabled');
         nextButton.classList.add('bg-gray-300');
-        my_modal_2.showModal()
     }
 });
 
-function nextPopupButton() {
-    hideElementById()
 
+
+// back to home page 
+
+function hidePopup() {
+    const displayItem = document.getElementById('popup-section');
+    displayItem.classList.add('hidden');
 }
 
-// for (const item of items) {
-//     item.addEventListener('click', function (key) {
-//         const itemElement = key.currentTarget;
-//         const itemSerialText = key.currentTarget.innerText;
+function showAllElement() {
+    const allElementHide = document.querySelector('.ticket-interface');
+    allElementHide.classList.remove('hidden');
+}
 
-//         if (seatCount < 4) {
-//             // Create container div
-//             const divElement = document.createElement('div');
-//             divElement.classList.add('ticket-list-container');
+function backToHome() {
+    hidePopup()
+    showAllElement()
+}
 
-//             const p1 = document.createElement('p');
-//             p1.innerText = itemSerialText;
-
-//             const p2 = document.createElement('p');
-//             p2.innerText = ticketClass;
-
-//             const p3 = document.createElement('p');
-//             p3.innerText = perSeatPrice;
-
-//             divElement.appendChild(p1);
-//             divElement.appendChild(p2);
-//             divElement.appendChild(p3);
-
-//             const ticketContainer = document.getElementById('booking-ticket-item');
-//             ticketContainer.appendChild(divElement);
-
-//             itemElement.classList.add('bg-green-400', "text-white");
-//             seatCount++;
-//             seatsLeft();
-//             totalSelectedSeat();
-//             seatPriceCount();
-
-
-//         } else {
-//             alert("You can only select a maximum of 4 seats.");
-//         }
-//     });
-// }
