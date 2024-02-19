@@ -25,7 +25,8 @@
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
-        .ticket-list-container{
+
+        .ticket-list-container {
             display: flex;
             align-items: center;
             margin-bottom: 20px;
@@ -58,7 +59,7 @@
 
 <body>
     <!-- header content section  -->
-    <header >
+    <header>
         <div class="navbar w-full md:w-8/12 mx-auto py-12 px-4 lg:px-0">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -113,8 +114,10 @@
                     style="background: url(images/banner.png) no-repeat center; background-size: cover;">
                     <!-- banner text container -->
                     <div class="text-center text-white ">
-                        <h1 class="text-4xl lg:text-6xl font-extrabold font-raleway mb-7 px-1 lg:px-60">Superior travel experience with <span class="text-primaryColor">Lux Express</span></h1>
-                        <p class="text-lg font-inter mb-10 px-1 lg:px-80">Book your Gateway to your next adventure for safe seats, comfortable rides, convenient, affordable, and unforgettable travel!</p>
+                        <h1 class="text-4xl lg:text-6xl font-extrabold font-raleway mb-7 px-1 lg:px-60">Superior travel
+                            experience with <span class="text-primaryColor">Lux Express</span></h1>
+                        <p class="text-lg font-inter mb-10 px-1 lg:px-80">Book your Gateway to your next adventure for
+                            safe seats, comfortable rides, convenient, affordable, and unforgettable travel!</p>
                         <button
                             class="btn rounded-8 px-8 border-none bg-primaryColor text-secondaryColor text-xl font-raleway font-bold"><a
                                 href="#ticket-interface">Buy Tickets</a></button>
@@ -215,7 +218,8 @@
                 <div class="">
                     <div class="text-center my-14">
                         <h1 class="text-5xl font-bold font-raleway mb-6">Lux Express Ltd.</h1>
-                        <p class="text-lg font-inter mb-10 lg:px-64">We are constantly working to improve our service standards to offer the most comfortable and reliable way of traveling.</p>
+                        <p class="text-lg font-inter mb-10 lg:px-64">We are constantly working to improve our service
+                            standards to offer the most comfortable and reliable way of traveling.</p>
                     </div>
                 </div>
 
@@ -282,7 +286,7 @@
                     </div>
                 </div>
 
-                
+
                 <!-- bus seat and ticket calculate section  -->
                 <div class="bg-white rounded-3xl py-10 flex flex-col lg:flex-row justify-between gap-1">
                     <div class="w-full lg:w-7/12 p-6 lg:p-10 lg:border-r-2 border-dotted border-gray-400">
@@ -426,11 +430,12 @@
                                         BDT <span id="total-price" class="text-inter">000</span></h4>
                                 </div>
                                 <!-- discount coupon -->
-                                <div id="discount-coupon-container" class=" flex justify-between my-4 py-1 px-2 bg-white rounded-lg">
+                                <div id="discount-coupon-container"
+                                    class=" flex justify-between my-4 py-1 px-2 bg-white rounded-lg">
                                     <input id="coupon-input" type="text" class="rounded-xl outline-none border-none w-f"
                                         placeholder="Have any coupon?" name="">
                                     <button onclick="discountCoupon()" id="coupon-btn"
-                                        class="btn-md rounded-xl border-none bg-primaryColor text-white text-base font-raleway font-semibold">Apply</button>
+                                        class="btn-md rounded-xl border-none bg-gray-300 text-white text-base font-raleway font-semibold" disabled>Apply</button>
                                 </div>
                                 <div class="flex justify-between my-4">
                                     <h4 class="text-lg font-semibold font-raleway text-secondaryColor">Grand Total</h4>
@@ -455,7 +460,7 @@
                                     <span class="text-inter text-base font-semibold text-secondaryColor">Phone
                                         Number*</span>
                                 </div>
-                                <input type="number" placeholder="Enter your phone number"
+                                <input id="phone-input" type="number" placeholder="Enter your phone number"
                                     class="input input-bordered w-full" />
                             </div>
 
@@ -468,9 +473,12 @@
                             </div>
 
                             <button id="next-btn" onclick="nextPopupButton()"
-                                class="btn-md w-full rounded-xl border-none bg-primaryColor text-white text-base font-raleway font-semibold mb-6"><a
-                                    href="#">Next</a></button>
+                                class="btn-md w-full rounded-xl border-none bg-gray-300 text-white text-base font-raleway font-semibold mb-6"
+                                disabled>
+                                <a href="#">Next</a>
+                            </button>
                         </div>
+
 
                         <div class="dynamic-set rounded-xl flex gap-3 justify-around">
                             <p class="text-secondaryColor opacity-60 font-inter font-medium underline">Terms and
@@ -487,13 +495,16 @@
         <!-- popup section  -->
         <section id="popup-section" class="bg-[#F7F8F8] h-screen flex justify-center items-center">
             <div class="flex justify-center items-center font-roboto">
-                <div class="container w-[720px] bg-white rounded-3xl p-16 flex flex-col justify-center items-center gap-1">
+                <div
+                    class="container w-full md:w-[720px] bg-white rounded-3xl p-16 flex flex-col justify-center items-center gap-1">
                     <img src="images/success.png" class="mb-8" alt="">
                     <h1 class="text-[#27AE60] font-roboto font-bold text-2xl mb-6">SUCCESS</h1>
-                    <h4 class="text-[#4A4A4A] text-xl font-medium text-center mb-2">Thank you for Booking Our Bus Seats. <br>We are working hard to find the best service and deals for you.</h4>
+                    <h4 class="text-[#4A4A4A] text-xl font-medium text-center mb-2">Thank you for Booking Our Bus Seats.
+                        <br>We are working hard to find the best service and deals for you.</h4>
                     <p class="font-light text-xl mb-5">Shortly you will find a confirmation in your email.</p>
-    
-                    <button class="btn btn-wide rounded-full px-12 border-none bg-[#27AE60] text-white text-xl font-semibold">Continue</button>
+
+                    <button
+                        class="btn btn-wide rounded-full px-12 border-none bg-[#27AE60] text-white text-xl font-semibold">Continue</button>
                 </div>
             </div>
         </section>
@@ -505,7 +516,8 @@
             <div class=" flex flex-col lg:flex-row justify-between  gap-5 mb-12">
                 <div class="text-white ">
                     <h1 class="card-title text-4xl font-raleway font-bold mb-5">Lux Express+</h1>
-                    <p class="card-des w-full lg:w-96 text-lg font-inter text-white opacity-80">In Lux Express there are people who love what they do and do what they love</p>
+                    <p class="card-des w-full lg:w-96 text-lg font-inter text-white opacity-80">In Lux Express there are
+                        people who love what they do and do what they love</p>
                 </div>
 
                 <div class="play-store">

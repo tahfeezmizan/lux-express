@@ -43,7 +43,6 @@ function discountCoupon() {
     const couponInputValue = couponInput.value;
     const couponButton = document.getElementById('coupon-btn');
 
-
     // grand price
     const totalSeatPrice = perSeatPrice * seatCount;
 
@@ -72,6 +71,19 @@ function discountCoupon() {
     }
 
 }
+
+phoneInput.addEventListener('input', function () {
+    
+    if (phoneInput.value.trim() !== '') {
+        
+        nextButton.removeAttribute('disabled');
+        nextButton.classList.add('bg-primaryColor');
+    } else {
+        
+        nextButton.setAttribute('disabled', 'disabled');
+        nextButton.classList.add('bg-gray-300');
+    }
+});
 
 // get seat item
 const items = document.querySelectorAll('.item');
@@ -123,9 +135,28 @@ function hideElementById() {
     console.log(element)
 }
 
-function nextPopupButton(){
-    hideElementById()
+
+// next button program 
+const phoneInput = document.getElementById('phone-input');
+const nextButton = document.getElementById('next-btn');
+
+
+phoneInput.addEventListener('input', function () {
     
+    if (phoneInput.value.trim() !== '') {
+        
+        nextButton.removeAttribute('disabled');
+        nextButton.classList.add('bg-primaryColor');
+    } else {
+        
+        nextButton.setAttribute('disabled', 'disabled');
+        nextButton.classList.add('bg-gray-300');
+    }
+});
+
+function nextPopupButton() {
+    hideElementById()
+
 }
 
 // for (const item of items) {
