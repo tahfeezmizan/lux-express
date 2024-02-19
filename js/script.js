@@ -38,44 +38,7 @@ function seatPriceCount() {
 }
 
 
-
-/** 
-// discount coupon 
-function discountCoupon() {
-    const couponInput = document.getElementById('coupon-input');
-    const couponInputValue = couponInput.value;
-    const couponButton = document.getElementById('coupon-btn');
-
-    // grand price
-    const totalSeatPrice = perSeatPrice * seatCount;
-
-    if (couponInputValue === 'NEW15') {
-        const discountPrice = totalSeatPrice * 0.15;
-
-        const totalDiscount = totalSeatPrice - discountPrice
-        const grandPriceElement = document.getElementById('grand-total');
-        grandPriceElement.innerText = totalDiscount;
-
-        const couponContainer = document.getElementById('discount-coupon-container');
-        couponContainer.classList.add('hidden')
-    }
-    else if (couponInputValue === 'Couple 20') {
-        const discountPrice = totalSeatPrice * 0.2;
-
-        const totalDiscount = totalSeatPrice - discountPrice
-        const grandPriceElement = document.getElementById('grand-total');
-        grandPriceElement.innerText = totalDiscount;
-
-        const couponContainer = document.getElementById('discount-coupon-container');
-        couponContainer.classList.add('hidden')
-    }
-    else {
-        alert('please provide a valid coupon')
-    }
-
-}
-*/
-// Function to handle discount coupon
+// discount coupon function
 function discountCoupon() {
     const couponInput = document.getElementById('coupon-input');
     const couponInputValue = couponInput.value;
@@ -96,8 +59,6 @@ function discountCoupon() {
 
         const couponContainer = document.getElementById('discount-coupon-container');
         couponContainer.classList.add('hidden');
-
-        enableApplyButton();
     }
     else if (couponInputValue === 'Couple 20') {
         const discountPrice = totalSeatPrice * 0.2;
@@ -109,11 +70,8 @@ function discountCoupon() {
         const grandPriceElement = document.getElementById('grand-total');
         grandPriceElement.innerText = totalDiscount;
 
-
         const couponContainer = document.getElementById('discount-coupon-container');
         couponContainer.classList.add('hidden');
-
-        enableApplyButton();
     }
     else {
         alert('Please provide a valid coupon');
