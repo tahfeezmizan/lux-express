@@ -164,28 +164,13 @@ for (const item of items) {
 }
 
 
-// next button popup function 
-function hideAllElement() {
-    const allElementHide = document.querySelector('.ticket-interface');
-    allElementHide.classList.add('hidden');
-}
-
-function setPopUpSection() {
-    const displayItem = document.getElementById('popup-section');
-    displayItem.classList.remove('hidden')
-}
-
-function nextPopupButton() {
-    hideAllElement()
-    setPopUpSection()
-}
 
 // next button program 
 const phoneInput = document.getElementById('phone-input');
 const nextButton = document.getElementById('next-btn');
 
+// input validation 
 phoneInput.addEventListener('input', function () {
-
     if (phoneInput.value.trim() !== '') {
         nextButton.removeAttribute('disabled');
         nextButton.classList.add('bg-primaryColor');
@@ -194,23 +179,4 @@ phoneInput.addEventListener('input', function () {
         nextButton.classList.add('bg-gray-300');
     }
 });
-
-
-
-// back to home page 
-
-function hidePopup() {
-    const displayItem = document.getElementById('popup-section');
-    displayItem.classList.add('hidden');
-}
-
-function showAllElement() {
-    const allElementHide = document.querySelector('.ticket-interface');
-    allElementHide.classList.remove('hidden');
-}
-
-function backToHome() {
-    hidePopup()
-    showAllElement()
-}
 
