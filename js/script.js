@@ -163,8 +163,6 @@ for (const item of items) {
     })
 }
 
-
-
 // next button program 
 const phoneInput = document.getElementById('phone-input');
 const nextButton = document.getElementById('next-btn');
