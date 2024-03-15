@@ -87,7 +87,6 @@ for (const item of items) {
         const itemElement = key.currentTarget;
         const itemSerialText = key.currentTarget.innerText;
 
-
         if (seatCount < 4) {
             // Create container div
             const divElement = document.createElement('div');
@@ -111,6 +110,7 @@ for (const item of items) {
 
             itemElement.classList.add('bg-green-400', "text-white");
             seatCount++;
+            
             seatsLeft()
             totalSelectedSeat()
             seatPriceCount();
@@ -121,11 +121,10 @@ for (const item of items) {
     })
 }
 
-// next button program 
+
 const phoneInput = document.getElementById('phone-input');
 const nextButton = document.getElementById('next-btn');
 
-// input validation 
 phoneInput.addEventListener('input', function () {
     if (phoneInput.value.trim() !== '') {
         nextButton.removeAttribute('disabled');
